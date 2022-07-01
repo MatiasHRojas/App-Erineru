@@ -1,0 +1,82 @@
+ion-grid {
+    padding: 0px;
+    margin: 0px;
+}
+
+ion-grid p{
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+}
+
+#imagen_usuario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#imagen_usuario img{
+    width: 90px;
+}
+
+#tipo_cuenta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+#apodo_usuario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    font-size: 27px;
+}
+
+#nombre_usuario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2px;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.rowOption{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#puntos_user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#actualiza_aPro{
+    margin-top: 3px;
+    margin-bottom: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
+
+#verifRow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#actualizarRow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+

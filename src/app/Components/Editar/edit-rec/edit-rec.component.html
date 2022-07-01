@@ -1,0 +1,116 @@
+<ion-header>
+  <ion-toolbar class="pageHeader">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="2" (click)="goBack()" class="arrowBack">
+          <span class="material-symbols-outlined arrowBackIcon">
+            arrow_back
+          </span>
+        </ion-col>
+        <ion-col class="pageTitle" size="8">
+          <ion-title>Editar<br>Recordatorio</ion-title>
+        </ion-col>
+        <ion-col size="2" class="addCheckIcon">
+          <span class="material-symbols-outlined" (click)="enviarDatos()">
+            check
+          </span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row><label>Asunto:</label></ion-row>
+    <ion-row><input id="editRecAsunto" class="addInput" [value]="rec.asunto" type="text" placeholder="Asunto del recordatorio..."></ion-row>
+    <hr>
+    <ion-row><label>Descripción:</label></ion-row>
+    <ion-row><textarea id="editRecDescr" class="addTxtArea" [value]="rec.descripcion" placeholder="Descripción del recordatorio..."></textarea></ion-row>
+    <hr>
+    <ion-row><label>Importancia:</label></ion-row>
+    <ion-row>
+      <ion-col size="8">
+        <ion-row class="rowSelect">
+          <ion-col size="2" class="flagIcon">
+            <span class="material-symbols-outlined">flag</span>
+          </ion-col>
+          <ion-col>
+            <ion-select [value]="rec.prioridad" id="editRecImpSelect" class="aa" placeholder="Nivel" interface="popover">
+              <ion-select-option value="Baja">Baja</ion-select-option>
+              <ion-select-option value="Media">Media</ion-select-option>
+              <ion-select-option value="Alta">Alta</ion-select-option>
+              <ion-select-option value="Muy Alta">Muy Alta</ion-select-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col size="4" class="disCenter">
+        <ion-button color="quaternary" (click)="cleanImportancia()">Limpiar</ion-button>
+      </ion-col>
+    </ion-row>
+    <hr>
+    <ion-row>
+      <ion-col class="disCenter">
+        <label>Fecha:</label>
+      </ion-col>
+      <ion-col class="disCenter">
+        <ion-toggle color="quaternary" checked="true" (click)="viewDateToggle()"></ion-toggle>
+      </ion-col>
+    </ion-row>
+    <ion-row class="disCenter" *ngIf="showDate">
+      <ion-col class="disRight">
+        <input id="editRecDia" class="addDateInput" [value]="rec.fecha.dia" (change)="checkFormat(1);" type="number" placeholder="Dia" maxlength="2" [max]="31" [min]="1">
+      </ion-col>
+      <ion-col class="disCenter">
+        <input id="editRecMes" class="addDateInput" [value]="rec.fecha.mes" (change)="checkFormat(2)" type="number" placeholder="Mes" maxlength="2" [max]="12" [min]="1">
+      </ion-col>
+      <ion-col class="disLeft">
+        <input id="editRecYear" class="addDateInput" [value]="rec.fecha.year" (change)="checkFormat(3)" type="number" placeholder="Año" maxlength="4" [max]="2030" [min]="2022">
+      </ion-col>
+    </ion-row>
+    <hr>
+    <ion-row>
+      <ion-col class="disCenter">
+        <label>Hora:</label>
+      </ion-col>
+      <ion-col class="disCenter">
+        <ion-toggle color="quaternary" checked="true" (click)="viewHourToggle()"></ion-toggle>
+      </ion-col>
+    </ion-row>
+    <ion-row class="disCenter" *ngIf="showHour">
+      <ion-col class="disRight">
+          <input id="editRecHora" class="addDateInput" [value]="rec.fecha.hora" (change)="checkFormat(4)" type="number" placeholder="Horas" maxlength="2" [max]="23" [min]="0">
+      </ion-col>
+      <ion-col class="disLeft">
+          <input id="editRecMinuto" class="addDateInput" [value]="rec.fecha.minuto" (change)="checkFormat(5)" type="number" placeholder="Minutos" maxlength="2" [max]="59" [min]="0">
+      </ion-col>
+    </ion-row>
+    <hr>
+    <ion-row><label>Ubicación:</label></ion-row>
+    <ion-row>
+      <ion-col size="8">
+        <ion-row class="rowSelect">
+          <ion-col>
+            <ion-select id="editRecUbicSelect" class="aa" [value]="rec.lugar" color="quaternary"  placeholder="Nivel" interface="popover">
+              <span *ngFor="let lugar of listaLugar">
+                <ion-select-option value="{{lugar.nombre}}">{{lugar.nombre}}</ion-select-option>
+              </span>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col size="4" class="disCenter">
+        <ion-button color="quaternary" (click)="cleanUbicacion()">Limpiar</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <ion-button (click)="optEliminar()" expand="full" size="large" color="quaternary">
+    Eliminar
+  </ion-button>
+</ion-footer>

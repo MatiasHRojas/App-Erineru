@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar class="pageHeader list_rec">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="2" (click)="goBack()" class="arrowBack">
+          <span class="material-symbols-outlined arrowBackIcon">
+            arrow_back
+          </span>
+        </ion-col>
+        <ion-col class="pageTitle" size="8">
+          <div>
+            <ion-row class="list_icon">
+              <span class="material-symbols-outlined">circle_notifications</span>
+            </ion-row>
+            <ion-row>
+              <ion-title>Recordar</ion-title>
+            </ion-row>
+          </div>
+        </ion-col>
+        <ion-col size="2" class="listPointIcon">
+          <span class="material-symbols-outlined">
+            more_vert
+          </span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid class="contentGrid">
+    <span *ngFor="let obj of arrayGeneral">
+      <span *ngIf="obj.tipo == 'rec'">
+        <ion-row class="recRow" [routerLink]="['/edit/Recordatorio', obj.obj.id]">
+          <ion-col class="recColor"></ion-col>
+          <ion-col size="10.8" class="recInfo">
+            <ion-row class="recAsunto"><p>{{obj.obj.asunto}}</p></ion-row>
+            <ion-row class="recAtributo" *ngIf="obj.obj.fecha.dia != ''">
+              <span class="material-symbols-outlined">alarm</span>
+              <p *ngIf="isToday(obj.obj.fecha)">{{'Hoy, ' + obj.obj.fecha.hora + ':' + obj.obj.fecha.minuto}}</p>
+              <p *ngIf="!isToday(obj.obj.fecha)">{{obj.obj.fecha.dia + '/' + obj.obj.fecha.mes + ' ' + obj.obj.fecha.hora + ':' + obj.obj.fecha.minuto}}</p>
+            </ion-row>
+            <ion-row class="recAtributo" *ngIf="obj.obj.lugar != ''">
+              <span class="material-icons">place</span>
+              <p>{{obj.obj.lugar}}</p>
+            </ion-row>
+            <ion-row class="recAtributo" *ngIf="obj.obj.prioridad != ''">
+              <span class="material-symbols-outlined">flag</span>
+              <p>{{obj.obj.prioridad}}</p>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </span>
+    </span>
+  </ion-grid>
+  <ion-fab class="addButton" [routerLink]="'/add/Recordatorio'" vertical="bottom" horizontal="end"  slot="fixed">
+    <ion-fab-button color="quaternary">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

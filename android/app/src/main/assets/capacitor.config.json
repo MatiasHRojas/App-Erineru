@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "Erineru",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

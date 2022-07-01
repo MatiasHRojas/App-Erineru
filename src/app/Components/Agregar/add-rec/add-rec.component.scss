@@ -1,0 +1,52 @@
+.addInput{
+    width: 100%;
+    margin: 10px;
+    border-radius: 8px;
+    height: 40px;
+    padding: 5px;
+}
+
+.addTxtArea{
+    width: 100%;
+    margin: 10px;
+    resize: vertical;
+    border-radius: 8px;
+    height: 100px;
+    min-height: 100px;
+    max-height: 300px;
+    padding: 5px;
+}
+
+.rowSelect{
+    width: 90%;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+.flagIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.dateRow{
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+.addDateInput{
+    width: 100%;
+    border-radius: 5px;
+    height: 45px;
+    padding: 5px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.addAgregarButton{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}

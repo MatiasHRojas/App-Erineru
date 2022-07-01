@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar class="pageHeader">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="2" (click)="goBack()" class="arrowBack">
+          <span class="material-symbols-outlined arrowBackIcon">
+            arrow_back
+          </span>
+        </ion-col>
+        <ion-col class="pageTitle" size="8">
+          <ion-title>Editar<br>Idea</ion-title>
+        </ion-col>
+        <ion-col size="2" class="addCheckIcon" (click)="enviarDatos()" >
+          <span class="material-symbols-outlined">
+            check
+          </span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row><label>Título:</label></ion-row>
+    <ion-row><input id="editIdeaTitulo" [value]="idea.titulo" class="addInput" type="text" placeholder="Título de la idea..."></ion-row>
+    <hr>
+    <ion-row><label>Descripción:</label></ion-row>
+    <ion-row><textarea id="editIdeaDescr" [value]="idea.descripcion" class="addTxtArea" placeholder="Descripción de la idea..."></textarea></ion-row>
+    <hr>
+    <ion-row><label>Listas:</label></ion-row>
+    <ion-row>
+      <ion-col size="8">
+        <ion-row class="rowSelect">
+          <ion-col>
+            <ion-select id="editIdeaLista" value="Ideas Generales" class="aa" placeholder="Lista" interface="popover">
+              <ion-select-option value="Ideas Generales">Ideas Generales</ion-select-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col size="4"></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <ion-button (click)="optEliminar()" expand="full" size="large" color="quaternary">
+    Eliminar
+  </ion-button>
+</ion-footer>

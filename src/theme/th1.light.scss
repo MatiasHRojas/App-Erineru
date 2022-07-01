@@ -1,0 +1,425 @@
+:root {
+    .th1-light{
+      /** primary **/
+      --ion-color-primary: #4c8dff;
+      --ion-color-primary-rgb: 56, 128, 255;
+      --ion-color-primary-contrast: #000000;
+      --ion-color-primary-contrast-rgb: 255, 255, 255;
+      --ion-color-primary-shade: #3171e0;
+      --ion-color-primary-tint: #4c8dff;
+  
+      /** secondary **/
+      --ion-color-secondary: #3dc2ff;
+      --ion-color-secondary-rgb: 61, 194, 255;
+      --ion-color-secondary-contrast: #ffffff;
+      --ion-color-secondary-contrast-rgb: 255, 255, 255;
+      --ion-color-secondary-shade: #36abe0;
+      --ion-color-secondary-tint: #50c8ff;
+  
+      /** tertiary **/
+      --ion-color-tertiary: #5260ff;
+      --ion-color-tertiary-rgb: 82, 96, 255;
+      --ion-color-tertiary-contrast: #ffffff;
+      --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+      --ion-color-tertiary-shade: #4854e0;
+      --ion-color-tertiary-tint: #6370ff;
+  
+      /** success **/
+      --ion-color-success: #2dd36f;
+      --ion-color-success-rgb: 45, 211, 111;
+      --ion-color-success-contrast: #ffffff;
+      --ion-color-success-contrast-rgb: 255, 255, 255;
+      --ion-color-success-shade: #28ba62;
+      --ion-color-success-tint: #42d77d;
+  
+      /** warning **/
+      --ion-color-warning: #ffc409;
+      --ion-color-warning-rgb: 255, 196, 9;
+      --ion-color-warning-contrast: #000000;
+      --ion-color-warning-contrast-rgb: 0, 0, 0;
+      --ion-color-warning-shade: #e0ac08;
+      --ion-color-warning-tint: #ffca22;
+  
+      /** danger **/
+      --ion-color-danger: #eb445a;
+      --ion-color-danger-rgb: 235, 68, 90;
+      --ion-color-danger-contrast: #ffffff;
+      --ion-color-danger-contrast-rgb: 255, 255, 255;
+      --ion-color-danger-shade: #cf3c4f;
+      --ion-color-danger-tint: #ed576b;
+  
+      /** dark **/
+      --ion-color-dark: #222428;
+      --ion-color-dark-rgb: 34, 36, 40;
+      --ion-color-dark-contrast: #ffffff;
+      --ion-color-dark-contrast-rgb: 255, 255, 255;
+      --ion-color-dark-shade: #1e2023;
+      --ion-color-dark-tint: #383a3e;
+  
+      /** medium **/
+      --ion-color-medium: #92949c;
+      --ion-color-medium-rgb: 146, 148, 156;
+      --ion-color-medium-contrast: #ffffff;
+      --ion-color-medium-contrast-rgb: 255, 255, 255;
+      --ion-color-medium-shade: #808289;
+      --ion-color-medium-tint: #9d9fa6;
+  
+      /** light **/
+      --ion-color-light: #ffffff;
+      --ion-color-light-rgb: 244, 245, 248;
+      --ion-color-light-contrast: #000000;
+      --ion-color-light-contrast-rgb: 0, 0, 0;
+      --ion-color-light-shade: #d7d8da;
+      --ion-color-light-tint: #f5f6f9;
+  
+      --ion-border-color: var(--ion-color-dark-shade);
+      --ion-background-color-rgb: var(--ion-color-light-rgb);
+      --ion-text-color: var(--ion-color-dark);
+      --ion-text-color-rgb: var(--ion-color-dark-rgb);
+  
+      --ion-color-step-50: #f3f3f3;
+      --ion-color-step-100: #e8e8e8;
+      --ion-color-step-150: #dcdcdc;
+      --ion-color-step-200: #d1d1d1;
+      --ion-color-step-250: #c5c5c5;
+      --ion-color-step-300: #b9b9b9;
+      --ion-color-step-350: #aeaeae;
+      --ion-color-step-400: #a2a2a2;
+      --ion-color-step-450: #979797;
+      --ion-color-step-500: #8b8b8b;
+      --ion-color-step-550: #7f7f7f;
+      --ion-color-step-600: #747474;
+      --ion-color-step-650: #686868;
+      --ion-color-step-700: #5d5d5d;
+      --ion-color-step-750: #515151;
+      --ion-color-step-800: #454545;
+      --ion-color-step-850: #3a3a3a;
+      --ion-color-step-900: #2e2e2e;
+      --ion-color-step-950: #232323;
+      
+      $color-recordatorio: #ffd88e;
+      $color-idea: #83e1c3;
+      $color-ayuda-memoria: #22aaa1;
+      $color-nota-rapida: #8e7564;
+
+      // Globales
+      
+      .addcol1{ background-color: $color-recordatorio; }
+      .addcol2{ background-color: $color-idea; }
+      .addcol3{ background-color: $color-ayuda-memoria; }
+      .addcol4{ background-color: $color-nota-rapida; }
+
+      --ion-toolbar-background: #f1e9e1;    
+      --ion-background-color: #fefaf7;
+
+      .list_rec  { --ion-toolbar-background: #ffd88e; }
+      .list_idea { --ion-toolbar-background: #83e1c3; }
+      .list_am   { --ion-toolbar-background: #22aaa1; color:#000000; }
+      .list_nota { --ion-toolbar-background: #8e7564; color:#000000; }
+
+      .list_am   h1 { font-weight: bold; }
+      .list_nota h1 { font-weight: bold; }
+
+      .rowOption{
+        background-color: #f5eeea;
+      }
+  
+      .rowOption:active{
+        animation-name: change-bgRoww;
+        animation-duration: 0.5s;
+      }
+  
+      @keyframes change-bgRoww {
+        0% { background-color: #f5eeea; }
+        50% { background-color: rgb(245, 231, 196);
+              color: #000; }
+        100% { background-color: #f5eeea; }
+      }
+  
+      // Recientes
+
+      .topheader{
+        border-bottom: 2px solid rgba(230, 221, 216, 0.8);
+      }
+  
+      /* ----------Recordatorios---------- */
+      .recRow{
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 2px 5px rgba(112, 90, 78, 0.713);
+      }
+    
+      .recColor{
+        background-color: $color-recordatorio;
+      }
+
+      /* ----------Ideas---------- */
+      .ideaRow{
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 2px 5px rgba(112, 90, 78, 0.713);
+      }
+    
+      .ideaColor{
+        background-color: $color-idea;
+      }
+    
+      /* ------Ayuda Memorias----- */
+      .amRow{
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 2px 5px rgba(112, 90, 78, 0.713);
+      }
+    
+      .amColor{
+        background-color: $color-ayuda-memoria;
+      }
+    
+      /* ----------Notas---------- */
+      .notaRow{
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 2px 5px rgba(112, 90, 78, 0.713);
+      }
+
+      .notaColor{
+        background-color: $color-nota-rapida;
+      }
+    
+      .botmenu{
+        background-color: #f1e9e1;
+        border-top: solid 1px #dcd4cc;
+        color: rgb(28, 28, 28);
+      }
+  
+      #botMenu-icon1{
+        background-color: $color-recordatorio;
+      }
+      #botMenu-icon2{
+        background-color: $color-idea;
+      }
+      #botMenu-icon3{
+        background-color: $color-ayuda-memoria;
+      }
+      #botMenu-icon4{
+        background-color: $color-nota-rapida;
+      }
+      #botMenu-add{
+        background-color: rgb(255, 255, 255);
+      }
+
+      .botmenu li{
+        border: 2px solid rgb(191, 191, 191);
+      }
+  
+      #searchBar input{
+        border: 1px solid #bbbbbb;
+      }
+  
+      .header-md::after {
+        background: none;
+      }
+  
+      // Menu Lateral
+
+      #topSection{
+        background-color: #d6cbc1;
+        color: rgb(0, 0, 0);
+      }
+      
+      #userSection{
+        background-color: #f1e8e1;
+        color: var(--ion-text-color);
+      }
+  
+      #userSection:active{
+        animation-name: chaange-bg3;
+        animation-duration: 1s;
+      }
+  
+      .menuRow{
+        background-color: #fefaf7;
+      }
+
+      .hrLine{
+        background-color: #dbd5d0;
+      }
+  
+      .gridContent{
+        background-color: #fefaf7;
+      }
+  
+      .menuRow:active{
+        animation-name: chaange-bg1;
+        animation-duration: 1s;
+      }
+      
+      .rowTitle{
+        color: rgb(47, 42, 39);
+      }
+  
+      .actPro{
+        background-color: white;
+      }
+  
+      .actPro:active{
+        animation-name: chaange-bg2;
+        animation-duration: 1s;
+      }
+  
+      /* ------Animaciones Menu Lateral------ */
+  
+      @keyframes chaange-bg1 {
+        0% { background-color: initial; }
+        50% { background-color: rgb(245, 231, 196);
+             color: #000; }
+        100% { background-color: initial; }
+      }
+  
+      @keyframes chaange-bg2 {
+        0% { background-color: white; }
+        50% { background-color: rgb(254, 238, 198);
+             color: #000; }
+        100% { background-color: white; }
+      }
+  
+      @keyframes chaange-bg3 {
+        0% { background-color: #f1e8e1; }
+        50% { background-color: rgb(238, 221, 180);
+             color: #000; }
+        100% { background-color: #f1e8e1; }
+      }
+  
+  
+      /* --- Perfil --- */
+
+      #actualiza_aPro{
+        background-color: #ece4db;
+      }
+
+      #actualiza_aPro:active{
+        animation-name: chaange-bg4;
+        animation-duration: 1s;
+      }
+
+      @keyframes chaange-bg4 {
+        0% { background-color: #ece4db; }
+        50% { background-color: rgb(238, 221, 180);
+             color: #000; }
+        100% { background-color: #ece4db; }
+      }
+
+      /* --- Actualizar a PRO --- */
+  
+      .gridSize{
+        box-shadow: 0px 3px 6px rgba(124, 124, 124, 0.616);
+      }
+  
+      .basicAccount{
+        background-color: #f4ece4;
+      }
+    
+      .proAccount{
+        background-color: #f4e8e0;
+      }
+  
+      .actualBtn{
+        background-color: #e4ddd5;
+      }
+    
+      .conseguirBtn{
+        background-color: #fbfaf9;
+      }
+  
+      /* ------Canjear Puntos------ */
+  
+      .pointsSection span{
+        color: #483c2b;
+      }
+      
+      #buyPoints{
+        background-color: #f2e9e1;
+        color: rgb(21, 21, 21);
+        border: 1px rgb(175, 175, 175) solid;
+      }
+  
+      /* ------ Preferencias ------ */
+  
+      .prefTitle{
+        background-color: #fefaf7;
+      }
+      
+      .tamFuente{
+        background-color: #f5eeea;
+      }
+      
+      .diaSemanaSection{
+        background-color: #f5eeea;
+      }
+  
+      /* ------ Apariencia ------ */
+  
+      .circulo{
+        background-color: white;
+        border: 1px solid #58463c;
+      }
+      
+      .circulo div{
+        background-color: #58463c;
+      }
+      
+      .circulo2{
+        background-color: white;
+        border: 1px solid #58463c;
+      }
+
+      .temaDisp{
+        background-color: rgb(225, 225, 225);
+        border: 1px solid gray;
+      }
+
+      .temaDisp p{
+        color: rgb(225, 225, 225);
+      }
+
+      /* ------ Widget ------ */
+
+      .widgetRow{
+        background-color: #ede4df;
+        box-shadow: 0px 3px 6px rgba(61, 45, 37, 0.558);
+      }
+
+      /* -- Horario y Lugar -- */
+
+      .divHyL{
+        background-color: #bcb398;
+      }
+
+      /* ------- add -------  */
+
+      .addInput{
+        background-color: white;
+        border: 1px solid gray;
+      }
+
+      .addTxtArea{
+        background-color: white;
+        border: 1px solid gray;
+      }
+    
+      .rowSelect{
+        background-color: white;
+        border: 1px solid gray;
+      }
+      
+      .aa{
+        --background-color: white;
+      }
+
+      .addDateInput{
+        background-color: white;
+        border: 1px solid gray;
+      }
+
+      /* ------- edit -------  */
+
+
+    }
+        
+  }

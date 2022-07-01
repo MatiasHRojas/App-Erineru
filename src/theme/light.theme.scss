@@ -1,0 +1,279 @@
+:root {
+  .light-theme{
+    /** primary **/
+    --ion-color-primary: #a3fca2;
+    --ion-color-primary-rgb: 56, 128, 255;
+    --ion-color-primary-contrast: #000000;
+    --ion-color-primary-contrast-rgb: 255, 255, 255;
+    --ion-color-primary-shade: #3171e0;
+    --ion-color-primary-tint: #4c8dff;
+
+    /** secondary **/
+    --ion-color-secondary: #3dc2ff;
+    --ion-color-secondary-rgb: 61, 194, 255;
+    --ion-color-secondary-contrast: #ffffff;
+    --ion-color-secondary-contrast-rgb: 255, 255, 255;
+    --ion-color-secondary-shade: #36abe0;
+    --ion-color-secondary-tint: #50c8ff;
+
+    /** tertiary **/
+    --ion-color-tertiary: #efefef;
+    --ion-color-tertiary-rgb: 225,225,225;
+    --ion-color-tertiary-contrast: #000000;
+    --ion-color-tertiary-contrast-rgb: 0,0,0;
+    --ion-color-tertiary-shade: #c6c6c6;
+    --ion-color-tertiary-tint: #e4e4e4;
+
+    /** success **/
+    --ion-color-success: #2dd36f;
+    --ion-color-success-rgb: 45, 211, 111;
+    --ion-color-success-contrast: #ffffff;
+    --ion-color-success-contrast-rgb: 255, 255, 255;
+    --ion-color-success-shade: #28ba62;
+    --ion-color-success-tint: #42d77d;
+
+    /** warning **/
+    --ion-color-warning: #ffc409;
+    --ion-color-warning-rgb: 255, 196, 9;
+    --ion-color-warning-contrast: #000000;
+    --ion-color-warning-contrast-rgb: 0, 0, 0;
+    --ion-color-warning-shade: #e0ac08;
+    --ion-color-warning-tint: #ffca22;
+
+    /** danger **/
+    --ion-color-danger: #eb445a;
+    --ion-color-danger-rgb: 235, 68, 90;
+    --ion-color-danger-contrast: #ffffff;
+    --ion-color-danger-contrast-rgb: 255, 255, 255;
+    --ion-color-danger-shade: #cf3c4f;
+    --ion-color-danger-tint: #ed576b;
+
+    /** dark **/
+    --ion-color-dark: #222428;
+    --ion-color-dark-rgb: 34, 36, 40;
+    --ion-color-dark-contrast: #ffffff;
+    --ion-color-dark-contrast-rgb: 255, 255, 255;
+    --ion-color-dark-shade: #1e2023;
+    --ion-color-dark-tint: #383a3e;
+
+    /** medium **/
+    --ion-color-medium: #92949c;
+    --ion-color-medium-rgb: 146, 148, 156;
+    --ion-color-medium-contrast: #ffffff;
+    --ion-color-medium-contrast-rgb: 255, 255, 255;
+    --ion-color-medium-shade: #808289;
+    --ion-color-medium-tint: #9d9fa6;
+
+    /** light **/
+    --ion-color-light: #ffffff;
+    --ion-color-light-rgb: 244, 245, 248;
+    --ion-color-light-contrast: #000000;
+    --ion-color-light-contrast-rgb: 0, 0, 0;
+    --ion-color-light-shade: #d7d8da;
+    --ion-color-light-tint: #f5f6f9;
+
+    --ion-border-color: var(--ion-color-dark-shade);
+    --ion-background-color: var(--ion-color-light);
+    --ion-background-color-rgb: var(--ion-color-light-rgb);
+    --ion-text-color: var(--ion-color-dark);
+    --ion-text-color-rgb: var(--ion-color-dark-rgb);
+
+    --ion-color-step-50: #f3f3f3;
+    --ion-color-step-100: #e8e8e8;
+    --ion-color-step-150: #dcdcdc;
+    --ion-color-step-200: #d1d1d1;
+    --ion-color-step-250: #c5c5c5;
+    --ion-color-step-300: #b9b9b9;
+    --ion-color-step-350: #aeaeae;
+    --ion-color-step-400: #a2a2a2;
+    --ion-color-step-450: #979797;
+    --ion-color-step-500: #8b8b8b;
+    --ion-color-step-550: #7f7f7f;
+    --ion-color-step-600: #747474;
+    --ion-color-step-650: #686868;
+    --ion-color-step-700: #5d5d5d;
+    --ion-color-step-750: #515151;
+    --ion-color-step-800: #454545;
+    --ion-color-step-850: #3a3a3a;
+    --ion-color-step-900: #2e2e2e;
+    --ion-color-step-950: #232323;
+
+    --ion-toolbar-background: #F8F8F8;    
+
+    // Globales
+
+    .rowOption{
+      background-color: rgb(243, 243, 243);
+    }
+
+    .rowOption:active{
+      animation-name: change-bgRow;
+      animation-duration: 0.5s;
+    }
+
+    @keyframes change-bgRow {
+      0% { background-color: rgb(243, 243, 243); }
+      50% { background-color: rgb(219, 216, 235);
+            color: #000; }
+      100% { background-color: rgb(243, 243, 243); }
+    }
+
+    // Recientes
+    .topheader{
+      border-bottom: 2px solid rgba(210, 210, 210, 0.8);
+    }
+
+    .botmenu{
+      background-color: #f2f2f2;
+      border-top: solid 1px #cecece;
+      color: rgb(28, 28, 28);
+    }
+
+    #addButton ion-fab-button{
+      border: 1px solid rgb(205, 205, 205);
+    }
+
+    .botmenu li{
+      border: 2px solid rgb(191, 191, 191);
+      background-color: white;
+    }
+
+    #searchBar input{
+      border: 1px solid #bbbbbb;
+    }
+
+    .header-md::after {
+      background: none;
+    }
+
+    #topSection{
+      background-color: #D9D9D9;
+      color: var(--ion-text-color);
+    }
+    
+    #userSection{
+      background-color: #E8E8E8;
+      color: var(--ion-text-color);
+    }
+
+    #userSection:active{
+      animation-name: change-bg3;
+      animation-duration: 1s;
+    }
+
+    .hrLine{
+      background-color: #e2e2e2;
+    }
+
+    .gridContent{
+      background-color: #F4F4F4;
+    }
+
+    .menuRow:active{
+      animation-name: change-bg1;
+      animation-duration: 1s;
+    }
+    
+    .rowTitle{
+      color: rgb(37, 37, 37);
+    }
+
+    .actPro{
+      background-color: white;
+    }
+
+    .actPro:active{
+      animation-name: change-bg2;
+      animation-duration: 1s;
+    }
+
+    /* ------Animaciones Menu Lateral------ */
+
+    @keyframes change-bg1 {
+      0% { background-color: initial; }
+      50% { background-color: rgb(204, 201, 215);
+           color: #000; }
+      100% { background-color: initial; }
+    }
+
+    @keyframes change-bg2 {
+      0% { background-color: white; }
+      50% { background-color: rgb(213, 211, 224);
+           color: #000; }
+      100% { background-color: white; }
+    }
+
+    @keyframes change-bg3 {
+      0% { background-color: #E8E8E8; }
+      50% { background-color: rgb(219, 216, 235);
+           color: #000; }
+      100% { background-color: #E8E8E8; }
+    }
+
+
+    /* --- Actualizar a PRO --- */
+
+    .gridSize{
+      box-shadow: 0px 3px 6px rgba(124, 124, 124, 0.616);
+    }
+
+    .basicAccount{
+      background-color: #F7F7F7;
+    }
+  
+    .proAccount{
+      background-color: #EEEEEE;
+    }
+
+    .actualBtn{
+      background-color: #E2E2E2;
+    }
+  
+    .conseguirBtn{
+      background-color: #FFFFFF;
+    }
+
+    /* ------Canjear Puntos------ */
+
+    .pointsSection span{
+      color: rgb(106, 106, 106);
+    }
+    
+    #buyPoints{
+      background-color: rgb(224, 224, 224);
+      color: #000;
+      border: 1px rgb(175, 175, 175) solid;
+    }
+
+    /* ------ Preferencias ------ */
+
+    .prefTitle{
+      background-color: rgb(255, 255, 255);
+    }
+    
+    .tamFuente{
+      background-color: rgb(237, 237, 237);
+    }
+    
+    .diaSemanaSection{
+      background-color: rgb(237, 237, 237);
+    }
+
+    /* ------ Apariencia ------ */
+
+    .circulo{
+      background-color: white;
+      border: 1px solid gray;
+    }
+    
+    .circulo div{
+      background-color: gray;
+    }
+    
+    .circulo2{
+      background-color: white;
+      border: 1px solid gray;
+    }
+  }
+      
+}

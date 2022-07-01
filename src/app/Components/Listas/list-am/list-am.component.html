@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar class="pageHeader list_am">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="2" (click)="goBack()" class="arrowBack">
+          <span class="material-symbols-outlined arrowBackIcon">
+            arrow_back
+          </span>
+        </ion-col>
+        <ion-col class="pageTitle" size="8">
+          <div>
+            <ion-row class="list_icon">
+              <span class="material-symbols-outlined">quiz</span>
+            </ion-row>
+            <ion-row>
+              <h1>Ayuda Memoria</h1>
+            </ion-row>
+          </div>
+        </ion-col>
+        <ion-col size="2" class="listPointIcon">
+          <span class="material-symbols-outlined">
+            more_vert
+          </span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <ion-grid class="contentGrid">
+    <span *ngFor="let obj of arrayGeneral">
+      <span *ngIf="obj.tipo == 'am'">
+        <ion-row class="amRow" [routerLink]="['/edit/Ayuda_Memoria', obj.obj.id]">
+          <ion-col class="amColor"></ion-col>
+          <ion-col size="10.8" class="amInfo">
+            <ion-row class="amTitulo"><p>{{'"' + obj.obj.objetivo + " " + obj.obj.clave + " " + obj.obj.dato + " " + obj.obj.complemento + '"'}}</p></ion-row>
+            <ion-row class="amAtributo">
+              <span class="material-symbols-outlined">forward</span>
+              <p>{{obj.obj.pregunta}}</p>
+            </ion-row>
+            <ion-row class="amAtributo">
+              <span class="material-symbols-outlined">reply</span>
+              <p>{{obj.obj.respuesta}}</p>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </span>
+    </span>
+  </ion-grid>
+  <ion-fab class="addButton" [routerLink]="'/add/Ayuda_Memoria'" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="quaternary">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

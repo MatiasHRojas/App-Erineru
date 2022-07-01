@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar class="pageHeader">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="2" (click)="goBack()" class="arrowBack">
+          <span class="material-symbols-outlined arrowBackIcon">
+            arrow_back
+          </span>
+        </ion-col>
+        <ion-col class="pageTitle" size="8">
+          <ion-title>Editar<br>Horario</ion-title>
+        </ion-col>
+        <ion-col size="2" class="addCheckIcon" (click)="enviarDatos()" >
+          <span class="material-symbols-outlined">
+            check
+          </span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<!--
+  nombre: 'Todo el día',
+  variantes: '',
+  descripcion: 'Inicio y fin del día.',
+  hora: '8:00 - 22:00'
+-->
+
+<ion-content>
+  <ion-grid>
+    <ion-row><label>Nombre:</label></ion-row>
+    <ion-row><input id="editHrNombre" class="addInput" [value]="horario.nombre" type="text" placeholder="Nombre del horario..."></ion-row>
+    <hr>
+    <ion-row><label>Variantes:</label></ion-row>
+    <ion-row><input id="editHrVariante" class="addInput" [value]="horario.variantes" placeholder="Variantes..."></ion-row>
+    <hr>
+    <ion-row><label>Descripción:</label></ion-row>
+    <ion-row><textarea id="editHrDescr" class="addTxtArea" [value]="horario.descripcion" placeholder="Descripción del horario..."></textarea></ion-row>
+    <hr>
+    <ion-row>
+      <ion-col>
+        <label>Hora:</label>
+      </ion-col>
+      <ion-col class="disCenter">
+      </ion-col>
+    </ion-row>
+    <ion-row class="dateRow">
+      <ion-col size="4">
+        <input id="edithrHora" class="addDateInput" [value]="horaValue(horario.hora,1)"
+        (change)="checkFormat(1)" type="number"placeholder="Horas" maxlength="2" [max]="23" [min]="0">
+      </ion-col>
+      <ion-col size="4">
+        <input id="edithrMin" class="addDateInput" [value]="horaValue(horario.hora,2)"
+        (change)="checkFormat(2)" type="number" placeholder="Minutos" maxlength="2" [max]="59" [min]="0">
+      </ion-col>
+    </ion-row>
+    <hr>
+    <ion-row>
+      <ion-col>
+        <label>Hora de Término:</label>
+      </ion-col>
+      <ion-col class="disCenter">
+        <ion-toggle color="quaternary" (click)="viewHourToggle()"></ion-toggle>
+      </ion-col>
+    </ion-row>
+    <ion-row class="dateRow" *ngIf="showHour">
+      <ion-col size="4">
+        <input id="edithrHoraFin" class="addDateInput" [value]="horaValue(horario.hora,3)" 
+        (change)="checkFormat(3)" type="number" placeholder="Horas" maxlength="2" [max]="23" [min]="0">
+      </ion-col>
+      <ion-col size="4">
+        <input id="edithrMinFin" class="addDateInput" [value]="horaValue(horario.hora,4)"
+        (change)="checkFormat(4)" type="number" placeholder="Minutos" maxlength="2" [max]="59" [min]="0">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

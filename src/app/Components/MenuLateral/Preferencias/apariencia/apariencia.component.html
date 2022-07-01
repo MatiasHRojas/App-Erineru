@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar class="pageHeader">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="2" (click)="goBack()" class="arrowBack">
+          <span class="material-symbols-outlined arrowBackIcon">
+            arrow_back
+          </span>
+        </ion-col>
+        <ion-col class="pageTitle" size="8">
+          <ion-title>Apariencia</ion-title>
+        </ion-col>
+        <ion-col size="2">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col class="themeSpot" (click)="setLight_th1()">
+        <!--las imagenes iwal son random, se pueden cambiar si quieren-->
+        <p>Claro</p>
+        <img class="imgLight" src="../../../../../assets/imgs/themes/th1-light.png" alt="aa">
+        <ion-row *ngIf="isLight"><div class="circulo"><div></div></div></ion-row>
+        <ion-row *ngIf="!isLight"><div class="circulo2"></div></ion-row>
+      </ion-col>
+      <ion-col class="themeSpot" (click)="setLight_th2()">
+        <p>Oscuro</p>
+        <img class="imgDark" src="../../../../../assets/imgs/themes/th2-light.png" alt="aa">
+        <ion-row *ngIf="!isLight"><div class="circulo"><div></div></div></ion-row>
+        <ion-row *ngIf="isLight"><div class="circulo2"></div></ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>Temas</ion-row>
+    <div class="temas">
+      <div class="temaDisp" *ngFor="let item of squares; index as i">
+          <img src="../../../../../assets/imgs/themes/th-default.png">
+          <p>{{item.text}}</p>
+      </div>
+    </div>
+  
+    <ion-row>Mascotas</ion-row>
+    <div class="temas">
+      <div class="temaDisp" *ngFor="let item of squares; index as i">
+          <img src="../../../../../assets/imgs/themes/th-default.png">
+          <p>{{item.text}}</p>
+      </div>
+    </div>
+  
+    <ion-row>Fondos Para Alertas</ion-row>
+    <div class="temas">
+      <div class="temaDisp" *ngFor="let item of squares; index as i">
+          <img src="../../../../../assets/imgs/themes/th-default.png">
+          <p>{{item.text}}</p>
+      </div>
+    </div>
+  </ion-grid>
+</ion-content>
