@@ -1,0 +1,23 @@
+.addInput{
+    width: 100%;
+    margin: 10px;
+    border-radius: 8px;
+    height: 40px;
+    padding: 5px;
+}
+
+.addTxtArea{
+    width: 100%;
+    margin: 10px;
+    resize: vertical;
+    border-radius: 8px;
+    height: 100px;
+    min-height: 100px;
+    max-height: 300px;
+    padding: 5px;
+}
+
+.rowSelect{
+    margin: 10px;
+    border-radius: 8px;
+}

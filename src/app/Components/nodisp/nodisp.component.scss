@@ -1,0 +1,44 @@
+#grid{
+    height: 70%;
+    display: flex;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.nodispImg{
+    width: 100%;
+    height: 200px;
+    margin: 20px;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;    
+}
+
+.nodispImg img{
+    width: 160px;
+    height: 150px;
+    animation-name: size-change;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes size-change {
+    from { width: 160px; height: 150px; }
+    to   { width: 170px; height: 160px;}
+}
+
+.nodispMsj{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nodispMsj p{
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+}

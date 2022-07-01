@@ -1,0 +1,86 @@
+.themeSpot{
+    justify-content: center;
+    text-align: center;
+}
+
+.themeSpot p{
+    padding: 0px;
+    margin: 0px;
+}
+
+.themeSpot ion-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circulo{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circulo div{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.circulo2{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgLight{
+    width: 70%;
+    border-radius: 15px;
+}
+
+.imgDark{
+    width: 70%;
+    border-radius: 15px;
+}
+
+ion-content ::-webkit-scrollbar{
+    display:block;
+}
+
+.temas{
+    width: auto;
+    display: flex;
+    overflow-x: scroll;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.temaDisp{
+    width: 120px;
+    height: 150px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+.temaDisp p{
+    position: relative;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.temaDisp img{
+    width: 100px;
+}

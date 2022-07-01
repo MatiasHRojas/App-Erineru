@@ -1,0 +1,226 @@
+<ion-header (click)="hideOpt(0)">
+  <ion-toolbar class="pageHeader">
+    <ion-grid>
+        <ion-row>
+          <ion-col size="2" (click)="goBack()" class="arrowBack">
+            <span class="material-symbols-outlined arrowBackIcon">
+              arrow_back
+            </span>
+          </ion-col>
+          <ion-col class="pageTitle" size="8">
+            <ion-title>Preferencias</ion-title>
+          </ion-col>
+          <ion-col size="2">
+          </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<!--
+  <ion-label >
+    Apariencia
+  </ion-label>
+-->
+
+<ion-content>
+  <ion-grid id="gridd1">
+    <ion-row class="prefTitle" (click)="hideOpt(0)">Vista</ion-row>
+    <!-- -------Apariencia------- -->
+    <ion-row class="rowOption" id="apariencia" [routerLink]="'/Apariencia'">
+      <ion-col size="11">
+        <ion-row class="prefRowTitle">Apariencia</ion-row>
+        <ion-row class="prefSubText">Modo oscuro, temas, mascotas, fondos</ion-row>
+      </ion-col>
+      <ion-col class="sideBtn" size="1">
+        <span class="material-symbols-outlined">
+          navigate_next
+        </span>
+      </ion-col>
+    </ion-row>
+    
+    <!-- ----Tamaño de Fuente---- -->
+    <ion-row class="rowOption" *ngIf="displayOpt1 == false" (click)="activeDisplay(1)">
+      <ion-col size="11">
+        <ion-row class="prefRowTitle">
+          Tamaño de fuente
+        </ion-row>
+        <ion-row class="prefSubText">
+          {{tamElegido}}
+        </ion-row>
+      </ion-col>
+      <ion-col class="sideBtn" size="1">
+        <span class="material-symbols-outlined">
+          expand_more
+        </span>
+      </ion-col>
+    </ion-row>
+
+    <!-- Desplegado -->
+    <ion-row class="tamFuente" onshow="radio1()" *ngIf="(displayOpt1 == true) ">
+      <ion-col size="11">
+        <ion-row class="prefRowTitle" (click)="displayOpt1=false">
+          Tamaño de fuente
+        </ion-row>
+        <ion-row id="abcSection">
+          <div id="abcFlex">
+            <div *ngIf="(tamElegido==='Pequeña')">
+              <p style="font-size: 15px; font-weight: bold;">AaBbCc</p>
+              <p style="font-size: 12px;">AaBbCc</p>
+            </div>
+            <div *ngIf="(tamElegido==='Mediana')">
+              <p style="font-size: 18px; font-weight: bold;">AaBbCc</p>
+              <p style="font-size: 16px;">AaBbCc</p>
+            </div>
+            <div *ngIf="(tamElegido==='Grande')">
+              <p style="font-size: 22px; font-weight: bold;">AaBbCc</p>
+              <p style="font-size: 19px;">AaBbCc</p>
+            </div>
+          </div>
+        </ion-row>
+        <ion-row>
+          <ion-col class="radioSection">
+            <div>
+              <p>Pequeña</p>
+              <div class="inputdiv"><input (click)="tamElegido='Pequeña'" class="prefRadio" type="radio" id="opt1" name="opt textsize" value="pequena"></div>
+            </div>
+          </ion-col>
+          <ion-col class="radioSection">
+            <div>
+              <p>Mediana</p>
+              <div class="inputdiv"><input (click)="tamElegido='Mediana'" class="prefRadio" type="radio" id="opt2" name="opt textsize" value="mediana"></div>
+            </div>
+          </ion-col>
+          <ion-col class="radioSection">
+            <div>
+              <p>Grande</p>
+              <div class="inputdiv"><input (click)="tamElegido='Grande'" class="prefRadio" type="radio" id="opt3" name="opt textsize" value="grande"></div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col class="sideBtn" size="1">
+        <span class="material-symbols-outlined" (click)="displayOpt1=false">
+          expand_less
+        </span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-grid id="gridd2">
+    <ion-row class="prefTitle" (click)="hideOpt(0)">Otros</ion-row>
+    <!-- -----Notificaciones----- -->
+    <ion-row class="rowOption" [routerLink]="'/Notificaciones'">
+      <ion-col size="11">
+        <ion-row class="prefRowTitle">
+          Notificaciones
+        </ion-row>
+        <ion-row class="prefSubText">Sonidos, vibración, importancia, no molestar</ion-row>
+      </ion-col>
+      <ion-col class="sideBtn" size="1">
+        <span class="material-symbols-outlined">
+          navigate_next
+        </span>
+      </ion-col>
+    </ion-row>
+
+    <!-- -------Dia Semana------- -->
+    <ion-row class="rowOption" *ngIf="displayOpt2 == false" (click)="activeDisplay(2)">
+      <ion-col size="11">
+        <ion-row class="prefRowTitle">
+          Primer día de la semana
+        </ion-row>
+        <ion-row class="prefSubText">
+          {{diaSemana}}
+        </ion-row>
+      </ion-col>
+      <ion-col class="sideBtn" size="1">
+        <span class="material-symbols-outlined">
+          expand_more
+        </span>
+      </ion-col>
+    </ion-row>
+
+    <!-- Desplegado -->
+    <ion-row class="diaSemanaSection" *ngIf="(displayOpt2 == true)">
+      <ion-col size="11">
+        <ion-row class="prefRowTitle" (click)="displayOpt2=false">
+          Primer día de la semana
+        </ion-row>
+        <ion-row>
+          <ion-col size="1">
+            <ion-row>
+              <div><input (click)="diaSemana='Lunes'" class="prefRadio" type="radio" id="opt4" name="opt diasemana" value="lunes"></div>
+            </ion-row>
+            <ion-row>
+              <div><input (click)="diaSemana='Domingo'" class="prefRadio" type="radio" id="opt5" name="opt diasemana" value="domingo"></div>
+            </ion-row>
+          </ion-col>
+          <ion-col>
+            <ion-row>
+              <p>Lunes</p>
+            </ion-row>
+            <ion-row>
+              <p>Domingo</p>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col class="sideBtn" size="1">
+        <span class="material-symbols-outlined" (click)="displayOpt2=false">
+          expand_less
+        </span>
+      </ion-col>
+    </ion-row>
+
+    <!-- ------FormatoHoras------ -->
+    <ion-row class="rowOption" *ngIf="displayOpt3 == false" (click)="activeDisplay(3)">
+      <ion-col size="11">
+        <ion-row class="prefRowTitle">
+          Formato de horas
+        </ion-row>
+        <ion-row class="prefSubText">
+          {{formatoHora}}
+        </ion-row>
+      </ion-col>
+      <ion-col class="sideBtn" size="1">
+        <span class="material-symbols-outlined">
+          expand_more
+        </span>
+      </ion-col>
+    </ion-row>
+
+    <!-- Desplegado -->
+    <ion-row class="diaSemanaSection" *ngIf="(displayOpt3 == true)">
+      <ion-col size="11">
+        <ion-row class="prefRowTitle" (click)="displayOpt3=false">
+          Formato de horas
+        </ion-row>
+        <ion-row>
+          <ion-col size="1">
+            <ion-row>
+              <div><input (click)="formatoHora='24hrs'" class="prefRadio" type="radio" id="opt6" name="opt formatohora" value="24hrs"></div>
+            </ion-row>
+            <ion-row>
+              <div><input (click)="formatoHora='Am / Pm'" class="prefRadio" type="radio" id="opt7" name="opt formatohora" value="Am/Pm"></div>
+            </ion-row>
+          </ion-col>
+          <ion-col>
+            <ion-row>
+              <p>24hrs</p>
+            </ion-row>
+            <ion-row>
+              <p>Am / Pm</p>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col class="sideBtn" size="1">
+        <span class="material-symbols-outlined" (click)="displayOpt3=false">
+          expand_less
+        </span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar class="pageHeader">
+    <ion-grid>
+        <ion-row>
+          <ion-col size="2" (click)="goBack()" class="arrowBack">
+            <span class="material-symbols-outlined arrowBackIcon">
+              arrow_back
+            </span>
+          </ion-col>
+          <ion-col class="pageTitle" size="8">
+            <ion-title>Perfil</ion-title>
+          </ion-col>
+          <ion-col size="2">
+            <span class="material-symbols-outlined arrowBackIcon">
+              edit_note
+            </span>
+          </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid id="perfilHeader">
+    <ion-row id="imagen_usuario">
+      <img src="../../assets/imgs/menu/userImg.png" alt="aaa">
+    </ion-row>
+    <ion-row id="tipo_cuenta">
+      <p>Cuenta Básica</p>
+    </ion-row>
+    <ion-row id="apodo_usuario">
+      <p>ApodoUsuario</p>
+    </ion-row>
+    <ion-row id="nombre_usuario">
+      <p>Nombre Usuario</p>
+    </ion-row>
+  </ion-grid>
+  <ion-grid id="perfilContent">
+    <ion-row class="rowOption">
+      <div>
+        <ion-row>
+          <p>Puntos conseguidos</p>
+        </ion-row>
+        <ion-row id="puntos_user">
+          <span class="material-symbols-outlined">
+            magic_button
+          </span>
+          <p>1234</p>
+        </ion-row>
+      </div>
+    </ion-row>
+    <ion-row class="rowOption" [routerLink]="'/Canjear_Puntos'">
+      <ion-col size="1">
+
+      </ion-col>
+      <ion-col size="10">
+        <p>Canjear Puntos</p>
+      </ion-col>
+      <ion-col size="1">
+        <span class="material-symbols-outlined">
+          navigate_next
+        </span>
+      </ion-col>
+    </ion-row>
+    <ion-row id="actualiza_aPro" [routerLink]="'/Actualizar_a_Pro'">
+      <div>
+        <ion-row id="verifRow">
+          <span class="material-symbols-outlined">
+            verified
+          </span>
+        </ion-row>
+        <ion-row id="actualizarRow">
+          <p>¡Actualiza tu cuenta a PRO!</p>
+        </ion-row>
+      </div>
+    </ion-row>
+    <ion-row class="rowOption" [routerLink]="'/No_Disponible'">
+      <p>Copias de Seguridad</p>
+    </ion-row>
+    <ion-row class="rowOption" [routerLink]="'/No_Disponible'">
+      <p>Cerrar Sesión</p>
+    </ion-row>
+    <ion-row class="rowOption" [routerLink]="'/No_Disponible'">
+      <p>Eliminar Cuenta</p>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar class="pageHeader">
+    <ion-grid>
+        <ion-row>
+          <ion-col size="2" (click)="goBack()" class="arrowBack">
+            <span class="material-symbols-outlined arrowBackIcon">
+              arrow_back
+            </span>
+          </ion-col>
+          <ion-col class="pageTitle" size="8">
+            <ion-title>Comentarios</ion-title>
+          </ion-col>
+          <ion-col size="2">
+          </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row id="comTitle">
+      <h1>¡Tu opinión nos<br>importa!</h1>
+    </ion-row>
+    <ion-row class="rowOption" [routerLink]="'/No_Disponible'">
+      <span class="material-symbols-outlined">forum</span>
+      <p>Enviar comentarios y sugerencias</p>
+    </ion-row>
+    <ion-row class="rowOption" [routerLink]="'/No_Disponible'">
+      <span class="material-symbols-outlined">report</span>
+      <p>Notificar un error</p>
+    </ion-row>
+    <ion-row class="rowOption" [routerLink]="'/No_Disponible'">
+      <span class="material-symbols-outlined">star</span>
+      <p>Valorar la aplicación</p>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>

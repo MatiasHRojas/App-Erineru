@@ -1,0 +1,36 @@
+ul{
+    list-style-type: none;
+    padding: 0px;
+    text-align: center;
+}
+
+.pointsSection{
+    font-size: 20px;
+}
+
+.pointsSection li{
+    margin-top: 2px;
+}
+
+.pointsSection span{
+    font-size: 40px;
+}
+
+#buyPoints{
+    font-size: 14px;    
+    margin-top: 8px;
+    padding: 3px 13px 3px 13px;
+    border-radius: 20px;
+}
+
+.listSection{
+    font-size: 18px;
+}
+
+.listSection li{
+    margin-top: 2px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

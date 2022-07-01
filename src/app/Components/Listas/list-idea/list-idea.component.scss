@@ -1,0 +1,73 @@
+.listPointIcon{
+    display:flex;
+    align-items:center;
+    justify-content:right;
+}
+
+.listPointIcon span{
+    font-size: 28px;
+    font-weight: bolder;
+    margin: 10px;
+}
+
+.contentGrid{
+    padding: 25px;
+}
+
+.ideaRow{
+    margin-bottom: 20px;
+    border-radius: 18px;
+}
+
+.ideaRow p{
+    margin: 0px;
+    margin-left: 5px;
+}
+
+.ideaInfo{
+    padding: 10px;
+}
+
+.ideaColor{
+    border-top-left-radius: 18px;
+    border-bottom-left-radius: 18px;
+    width: 52px;
+    max-width: 55px;
+}
+
+.ideaTitulo{
+    margin-bottom: 5px;
+}
+
+.ideaTitulo p{
+    font-size: 16px;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-right: 10px;
+}
+
+.ideaDescripcion{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: 3px;
+}
+
+.ideaDescripcion p{
+    font-size: 14px;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-right: 10px;
+}
+
+.addButton ion-icon{
+    font-size: 20px;
+}
+
+.addButton ion-fab-button{
+    border-radius: 50%;
+}

@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar class="pageHeader">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="2" (click)="goBack()">
+          <span class="material-symbols-outlined arrowBackIcon">
+            arrow_back
+          </span>
+        </ion-col>
+        <ion-col class="pageTitle" size="8">
+          <ion-title>Editar<br>Ayuda Memoria</ion-title>
+        </ion-col>
+        <ion-col size="2" class="addCheckIcon" (click)="enviarDatos()" >
+          <span class="material-symbols-outlined">
+            check
+          </span>
+        </ion-col>
+        <ion-col size="2">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid >
+    <ion-row><label>Sujeto:</label></ion-row>
+    <ion-row><input id="editAmObj" [value]="am.objetivo" class="addInput" type="text" placeholder="Mamá"></ion-row>
+    <hr>
+    <ion-row><label>Verbo:</label></ion-row>
+    <ion-row><input id="editAmClave" [value]="am.clave" class="addInput" type="text" placeholder="quiere"></ion-row>
+    <hr>
+    <ion-row><label>Dato:</label></ion-row>
+    <ion-row><input id="editAmDato" [value]="am.dato" class="addInput" type="text" placeholder="un cachorrito"></ion-row>
+    <hr>
+    <ion-row><label>Complemento:</label></ion-row>
+    <ion-row><input id="editAmComp" [value]="am.complemento" class="addInput" type="text" placeholder="para navidad"></ion-row>
+    <hr>
+  
+  <ion-row class="generateArea">
+    <ion-button (click)="crearAyuda()" color="quaternary">
+      Generar
+    </ion-button>
+
+    <ion-card class="card">
+      <ion-card-subtitle>Pregunta</ion-card-subtitle>
+      <ion-card-title>{{preg}}</ion-card-title>
+      <ion-card-subtitle>Respuesta</ion-card-subtitle>
+      <ion-card-title>{{resp}}</ion-card-title>
+    </ion-card>
+  </ion-row>
+</ion-grid>
+
+</ion-content>
+
+<ion-footer>
+  <ion-button (click)="optEliminar()" expand="full" size="large" color="quaternary">
+    Eliminar
+  </ion-button>
+</ion-footer>

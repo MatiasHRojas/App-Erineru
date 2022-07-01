@@ -1,0 +1,443 @@
+<ion-menu class="mainmenu" side="start" menu-id="first" content-id="main">
+  <ion-header>
+    <ion-list id="menuHeader">
+      <ion-grid id="topSection">
+        <ion-row class="arrowRow">
+          <div class="material-symbols-outlined" (click)="closeMenu()">
+            arrow_back
+          </div>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-row id="erineru">
+              <h1>Erineru</h1>
+            </ion-row>
+            <ion-row id="logoImg">
+              <h2>(logo)</h2>
+            </ion-row>
+          </ion-col>
+          <ion-col id="mascotaImg">
+              <img src="../../assets/imgs/menu/axolotl.png" alt="aaa">
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid id="userSection"[routerLink]="'/Perfil'">
+        <ion-row>
+            <ion-row>
+              <ion-col class="userImg">
+                <img src="../../assets/imgs/menu/userImg.png" alt="aaa">
+              </ion-col>
+              <ion-col id="datosUser">
+                <ion-row id="userName">
+                  <h5>ApodoUsuario</h5>
+                </ion-row>
+                <ion-row id="userPoints">
+                  <ion-icon [ios]="'sparkles-outline'" [md]="'sparkles-sharp'"></ion-icon>
+                  <h6>1234</h6>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+        </ion-row>
+      </ion-grid>
+    </ion-list>
+  </ion-header>
+
+  <ion-content id="menuContent">
+    <ion-grid class="gridContent">
+      <div class="gridFlexContent">
+        <span>
+          <ion-row class="actPro" [routerLink]="'/Actualizar_a_Pro'">
+            <div class="material-symbols-outlined iconDiv">verified</div>
+            <ion-label class="rowTitle">Actualizar a Pro</ion-label>
+          </ion-row>
+        </span>
+        <span *ngFor="let item of listaMenu ; let i = index">
+          <ion-row class="menuRow" [routerLink]="[item.url]">
+            <div class="material-symbols-outlined iconDiv">{{item.icon}}</div>
+            <ion-label class="rowTitle">{{item.title}}</ion-label>
+          </ion-row>
+          <ion-row class="hrLine" *ngIf="(i==2)||(i==5)"></ion-row>
+        </span>
+      </div>
+    </ion-grid>
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main">
+
+  <ion-header class="topheader">
+    <ion-toolbar>
+      <ion-icon id="menuButton" (click)="openFirst()" slot="start" [ios]="'menu-outline'" [md]="'menu-sharp'"></ion-icon>
+      <ion-title>Recientes</ion-title>
+    </ion-toolbar>
+    <ion-toolbar id="searchSection">
+      <ion-searchbar id="searchBar" animated placeholder="Buscar"></ion-searchbar>
+      <ion-icon (click)="filterOpen=true" id="filterIcon" slot="end" [ios]="'filter-outline'" [md]="'filter-sharp'"></ion-icon>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content id="middlecontent" fullscreen="true">
+    <ion-fab id="addButton" (click)="addOpen=true" vertical="bottom" horizontal="end" edge slot="fixed">
+      <ion-fab-button color="quaternary">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+    <ion-popover class="addPopover" arrow="false" [isOpen]="addOpen" trigger="addButton" side="left" alignment="start" size="auto" reference="addButton">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <h4>Agregar</h4>
+            <ion-icon class="closeAddIcon" (click)="addOpen=false" slot="end" [ios]="'close-outline'" [md]="'close-sharp'"></ion-icon>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content>
+          <ion-grid class="addPopovergrid">
+            <ion-row class="addRow">
+              <ion-col class="addcol1" (click)="addAction('Recordatorio')">
+                <ion-row>
+                  <span class="material-symbols-outlined">circle_notifications</span>
+                </ion-row>
+                <ion-row><p>Recordatorio</p></ion-row>
+              </ion-col>
+              <ion-col  class="addcol2" (click)="addAction('Idea')">
+                <ion-row>
+                  <span class="material-symbols-outlined">emoji_objects</span>
+                </ion-row>
+                <ion-row><p>Idea</p></ion-row>
+              </ion-col>
+            </ion-row>
+            <ion-row class="addRow"> 
+              <ion-col class="addcol3" (click)="addAction('Ayuda_Memoria')">
+                <ion-row>
+                  <span class="material-symbols-outlined">quiz</span>
+                </ion-row>
+                <ion-row><p>Ayuda<br>Memoria</p></ion-row>
+              </ion-col>
+              <ion-col class="addcol4" (click)="addAction('Nota_Rapida')">
+                <ion-row>
+                  <span class="material-symbols-outlined">summarize</span>
+                </ion-row>
+                <ion-row><p>Nota<br>Rápida</p></ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-content>
+      </ng-template>
+    </ion-popover>
+
+    <ion-popover class="filterPopover" arrow="false" [isOpen]="filterOpen" trigger="filterIcon" alignment="end" side="bottom" size="auto" reference="middlecontent">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Filtrar</ion-title>
+            <ion-icon class="closeFilterIcon" (click)="filterOpen=false" slot="end" [ios]="'close-outline'" [md]="'close-sharp'"></ion-icon>
+          </ion-toolbar>
+        </ion-header>
+
+        <ion-content>
+          <ion-grid>
+              <ion-row>
+                listas
+              </ion-row>
+              <ion-row>
+                <ul>
+                  <li>Recordatorios</li>
+                  <li>Ideas</li>
+                  <li>Ayuda Memoria</li>
+                  <li>Notas Rápidas</li>
+                </ul>
+              </ion-row>
+          </ion-grid>
+          <ion-item color="none">
+            <ion-label>Mostrar</ion-label>
+            <ion-select value="1" okText="Aceptar" cancelText="Cancelar" interface="popover">
+              <ion-select-option value="1">Todo</ion-select-option>
+              <ion-select-option value="2">5 días</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-grid>
+            <ion-row>
+              Prioridad
+            </ion-row>
+            <ion-row>
+              <ul>
+                <li>Baja</li>
+                <li>Media</li>
+                <li>Alta</li>
+                <li>Muy Alta</li>
+              </ul>
+            </ion-row>
+          </ion-grid>
+          <ion-item>
+            <ion-list>
+              <ion-list-header>Ubicación</ion-list-header>
+              <ion-chip outline class="chip">
+                <ion-label>Casa</ion-label>
+              </ion-chip>
+              <ion-chip outline>
+                <ion-label>Trabajo</ion-label>
+              </ion-chip>
+              <ion-chip outline>
+                <ion-label>Escuela</ion-label>
+              </ion-chip>
+            </ion-list>
+          </ion-item>
+          <ion-item color="none" class="displayList">
+              <ion-label class="ordenar">Ordenar</ion-label>
+              <ion-select class="ordenarSelect" value="1" okText="Aceptar" cancelText="Cancelar" interface="popover">
+                <ion-select-option value="1" >Más Recientes</ion-select-option>
+                <ion-select-option value="2">Más Antiguas</ion-select-option>
+              </ion-select>
+          </ion-item>
+        </ion-content>
+        <ion-footer>
+          <ion-button color="quaternary" size="full" (click)="filterOpen=false">Confirmar</ion-button>
+        </ion-footer>
+
+      </ng-template>
+    </ion-popover>
+
+    <!-- CONTENT -->
+    <ion-grid class="contentGrid">
+      <span *ngFor="let obj of arrayGeneral">
+        <!-- RECORDATORIOS -->
+        <span *ngIf="obj.tipo == 'rec'">
+          <ion-row class="recRow" [routerLink]="['/edit/Recordatorio', obj.obj.id]">
+            <ion-col class="recColor"></ion-col>
+            <ion-col size="10.8" class="recInfo">
+              <ion-row class="recAsunto"><p>{{obj.obj.asunto}}</p></ion-row>
+              <ion-row class="recAtributo" *ngIf="obj.obj.fecha.dia != ''">
+                <span class="material-symbols-outlined">alarm</span>
+                <p *ngIf="isToday(obj.obj.fecha)">{{'Hoy, ' + obj.obj.fecha.hora + ':' + obj.obj.fecha.minuto}}</p>
+                <p *ngIf="!isToday(obj.obj.fecha)">{{obj.obj.fecha.dia + '/' + obj.obj.fecha.mes + ' ' + obj.obj.fecha.hora + ':' + obj.obj.fecha.minuto}}</p>
+              </ion-row>
+              <ion-row class="recAtributo" *ngIf="obj.obj.lugar != ''">
+                <span class="material-icons">place</span>
+                <p>{{obj.obj.lugar}}</p>
+              </ion-row>
+              <ion-row class="recAtributo" *ngIf="obj.obj.prioridad != ''">
+                <span class="material-symbols-outlined">flag</span>
+                <p>{{obj.obj.prioridad}}</p>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </span>
+        <!-- IDEAS -->
+        <span *ngIf="obj.tipo == 'idea'">
+          <ion-row class="ideaRow" [routerLink]="['/edit/Idea', obj.obj.id]">
+            <ion-col class="ideaColor"></ion-col>
+            <ion-col size="10.8" class="ideaInfo">
+              <ion-row class="ideaTitulo"><p>{{obj.obj.titulo}}</p></ion-row>
+              <ion-row class="ideaDescripcion"><p>{{obj.obj.descripcion}}</p></ion-row>
+            </ion-col>
+          </ion-row>
+        </span>
+        <!-- AYUDAS -->
+        <span *ngIf="obj.tipo == 'am'">
+          <ion-row class="amRow" [routerLink]="['/edit/Ayuda_Memoria', obj.obj.id]">
+            <ion-col class="amColor"></ion-col>
+            <ion-col size="10.8" class="amInfo">
+              <ion-row class="amTitulo"><p>{{'"' + obj.obj.objetivo + " " + obj.obj.clave + " " + obj.obj.dato + " " + obj.obj.complemento + '"'}}</p></ion-row>
+              <ion-row class="amAtributo">
+                <span class="material-symbols-outlined">forward</span>
+                <p>{{obj.obj.pregunta}}</p>
+              </ion-row>
+              <ion-row class="amAtributo">
+                <span class="material-symbols-outlined">reply</span>
+                <p>{{obj.obj.respuesta}}</p>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </span>
+        <!-- NOTAS -->
+        <span *ngIf="obj.tipo == 'nota'">
+          <ion-row class="notaRow" [routerLink]="['/edit/Nota_Rapida', obj.obj.id]">
+            <ion-col class="notaColor"></ion-col>
+            <ion-col size="10.8">
+              <ion-row class="notaTitulo"><p>{{obj.obj.asunto}}</p></ion-row>
+            </ion-col>
+          </ion-row>
+        </span>
+      </span>
+
+      <!-- RECORDATORIOS -->
+      <!--span *ngFor="let rec of arrayRecordatorios">
+        <ion-row class="recRow" [routerLink]="['/edit/Recordatorio', rec.id]">
+          <ion-col class="recColor"></ion-col>
+          <ion-col size="10.8" class="recInfo">
+            <ion-row class="recAsunto"><p>{{rec.asunto}}</p></ion-row>
+            <ion-row class="recAtributo" *ngIf="rec.fecha.dia != ''">
+              <span class="material-symbols-outlined">alarm</span>
+              <p *ngIf="isToday(rec.fecha)">{{'Hoy, ' + rec.fecha.hora + ':' + rec.fecha.minuto}}</p>
+              <p *ngIf="!isToday(rec.fecha)">{{rec.fecha.dia + '/' + rec.fecha.mes + ' ' + rec.fecha.hora + ':' + rec.fecha.minuto}}</p>
+            </ion-row>
+            <ion-row class="recAtributo" *ngIf="rec.lugar != ''">
+              <span class="material-icons">place</span>
+              <p>{{rec.lugar}}</p>
+            </ion-row>
+            <ion-row class="recAtributo" *ngIf="rec.prioridad != ''">
+              <span class="material-symbols-outlined">flag</span>
+              <p>{{rec.prioridad}}</p>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </span-->
+
+      <!-- IDEAS -->
+      <!--span *ngFor="let idea of arrayIdeas">
+        <ion-row class="ideaRow" [routerLink]="['/edit/Idea', idea.id]">
+          <ion-col class="ideaColor"></ion-col>
+          <ion-col size="10.8" class="ideaInfo">
+            <ion-row class="ideaTitulo"><p>{{idea.titulo}}</p></ion-row>
+            <ion-row class="ideaDescripcion"><p>{{idea.descripcion}}</p></ion-row>
+          </ion-col>
+        </ion-row>
+      </span-->
+
+      <!-- AYUDAS -->
+      <!--span *ngFor="let am of arrayAyudaMemoria">
+        <ion-row class="amRow" [routerLink]="['/edit/Ayuda_Memoria', am.id]">
+          <ion-col class="amColor"></ion-col>
+          <ion-col size="10.8" class="amInfo">
+            <ion-row class="amTitulo"><p>{{'"' + am.objetivo + " " + am.clave + " " + am.dato + " " + am.complemento + '"'}}</p></ion-row>
+            <ion-row class="amAtributo">
+              <span class="material-symbols-outlined">forward</span>
+              <p>{{am.pregunta}}</p>
+            </ion-row>
+            <ion-row class="amAtributo">
+              <span class="material-symbols-outlined">reply</span>
+              <p>{{am.respuesta}}</p>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </span-->
+
+      <!-- NOTAS -->
+      <!--span *ngFor="let nota of arrayNotasRapidas">
+        <ion-row class="notaRow" [routerLink]="['/edit/Nota_Rapida', nota.id]">
+          <ion-col class="notaColor"></ion-col>
+          <ion-col size="10.8">
+            <ion-row class="notaTitulo"><p>{{nota.asunto}}</p></ion-row>
+          </ion-col>
+        </ion-row>
+      </span-->
+
+      </ion-grid>
+
+    <!-- -------------------- MODAL --------------------- -->
+
+    <ion-modal #modal id="modal" trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
+      <ng-template>
+        <ion-content>
+          <ion-grid>
+            <ion-row class="titleRow">
+              <h2>Listas</h2>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <div id="botMenu-icon1" [routerLink]="'../list/Recordatorios'" onclick="modal.dismiss()">
+                  <span class="material-symbols-outlined">circle_notifications</span>
+                  <p>Recordatorio</p>
+                </div>
+              </ion-col>
+              <ion-col>
+                <div id="botMenu-icon2" [routerLink]="'../list/Ideas'" onclick="modal.dismiss()">
+                  <span class="material-symbols-outlined">emoji_objects</span>
+                  <p>Ideas Generales</p>
+                </div>
+              </ion-col>
+              <ion-col>
+                <div id="botMenu-icon3" [routerLink]="'../list/Ayuda_Memoria'" onclick="modal.dismiss()">
+                  <span class="material-symbols-outlined">quiz</span>
+                  <p>Ayuda Memoria</p>
+                </div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <div id="botMenu-icon4" [routerLink]="'../list/Notas_Rapidas'" onclick="modal.dismiss()">
+                  <span class="material-symbols-outlined">summarize</span>
+                  <p>Notas Rápidas</p>
+                </div>
+              </ion-col>
+              <ion-col>
+                <div id="botMenu-add">
+                  <span class="material-symbols-outlined">add</span>
+                </div>
+              </ion-col>
+              <ion-col></ion-col>
+            </ion-row>
+            <ion-row class="titleRow">
+              <h2>Recordatorios (hoy)</h2>
+            </ion-row>
+            <span *ngFor="let obj of arrayGeneral">
+              <span *ngIf="obj.tipo == 'rec'">
+                <span *ngIf="isToday(obj.obj.fecha)">
+                  <ion-row class="recRow" [routerLink]="['/edit/Recordatorio', obj.obj.id]" onclick="modal.dismiss()">
+                    <ion-col class="recColor"></ion-col>
+                    <ion-col size="10.8" class="recInfo">
+                      <ion-row class="recAsunto"><p>{{obj.obj.asunto}}</p></ion-row>
+                      <ion-row class="recAtributo" *ngIf="obj.obj.fecha.dia != ''">
+                        <span class="material-symbols-outlined">alarm</span>
+                        <p *ngIf="isToday(obj.obj.fecha)">{{'Hoy, ' + obj.obj.fecha.hora + ':' + obj.obj.fecha.minuto}}</p>
+                        <p *ngIf="!isToday(obj.obj.fecha)">{{obj.obj.fecha.dia + '/' + obj.obj.fecha.mes + ' ' + obj.obj.fecha.hora + ':' + obj.obj.fecha.minuto}}</p>
+                      </ion-row>
+                      <ion-row class="recAtributo" *ngIf="obj.obj.lugar != ''">
+                        <span class="material-icons">place</span>
+                        <p>{{obj.obj.lugar}}</p>
+                      </ion-row>
+                      <ion-row class="recAtributo" *ngIf="obj.obj.prioridad != ''">
+                        <span class="material-symbols-outlined">flag</span>
+                        <p>{{obj.obj.prioridad}}</p>
+                      </ion-row>
+                    </ion-col>
+                  </ion-row>
+                </span>
+              </span>
+            </span>
+          </ion-grid>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+
+  </ion-content>
+
+<!----------------------------------------------------------------->
+
+  <ion-footer >
+    <div>
+      <ion-tab-bar class="botmenu" slot="bottom">
+        <ion-grid>
+          <ion-row class="arrowUp">
+            <ion-row id="open-modal">
+              <span class="material-symbols-outlined">
+                expand_less
+              </span>
+            </ion-row>
+          </ion-row>
+          <ion-row>
+            <ul id="bottomMenu">
+              <li id="botMenu-icon1" [routerLink]="'../list/Recordatorios'">
+                <span class="material-symbols-outlined">circle_notifications</span>
+              </li>
+              <li id="botMenu-icon2" [routerLink]="'../list/Ideas'">
+                <span class="material-symbols-outlined">emoji_objects</span>
+              </li>
+              <li id="botMenu-icon3" [routerLink]="'../list/Ayuda_Memoria'">
+                <span class="material-symbols-outlined">quiz</span>
+              </li>
+              <li id="botMenu-icon4" [routerLink]="'../list/Notas_Rapidas'">
+                <span class="material-symbols-outlined">summarize</span>
+              </li>
+              <li id="botMenu-add">
+                <span class="material-symbols-outlined">add</span>
+              </li>
+            </ul>
+          </ion-row>
+        </ion-grid>
+        
+      </ion-tab-bar>
+    </div>
+  </ion-footer>
+</div>

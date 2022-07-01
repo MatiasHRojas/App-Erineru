@@ -1,0 +1,546 @@
+/* -------------------------- */
+/* -------Menu Lateral------- */
+/* -------------------------- */
+
+.mainmenu{
+    --width: 320px;
+}
+
+/* ------Header------ */
+
+#menuHeader{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    box-shadow: none;
+}
+
+#topSection{
+    width: 100%;
+    height: 160px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.arrowRow{
+    display: flex;
+    justify-content: right;
+    margin: 0px;
+    padding: 0px;
+}
+
+.arrowRow div{
+    font-size: 30px;
+    font-weight: bold;
+    padding-right: 6px;
+}
+
+#erineru{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#erineru h1{
+    margin: 0px;
+    margin-bottom: 5px;
+}
+
+#logoImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#mascotaImg{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+#mascotaImg img{
+    width: 100px;
+}
+
+/* ------Usuario----- */
+
+#userSection{
+    padding-top: 10px;
+    padding-bottom: 8px;
+    width: 100%;
+}
+
+.userImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userImg img{
+    width: 70px;
+    height: 70px;
+}
+
+#datosUser{
+    padding-top: 10px;
+}
+
+#userName{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#userName h5{
+    margin: 5px;
+}
+
+#userPoints{
+    display: flex;
+    align-items: center;
+}
+
+#userPoints h6{
+    margin: 5px;
+}
+
+#userPoints ion-icon{
+    font-size: 20px;
+    margin-right: 8px;
+    margin-left: 5px;
+}
+
+/* -------Lista------ */
+
+.gridContent{
+    height: 100%;
+    padding: 0px;
+}
+
+// Actualizar a pro
+.actPro{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    height: auto;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.iconDiv{
+    margin-right: 10px;
+    font-size: 30px;
+}
+
+.rowTitle{
+    font-weight:100;
+    font-size: 20px;
+}
+
+.menuRow{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.hrLine{
+    width: 90%;
+    height: 2px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* -------------------------- */
+/* ----------Header---------- */
+/* -------------------------- */
+
+#menuButton{
+    margin: 15px;
+    font-size: 25px;
+}
+
+#searchSection{
+    --padding-bottom:10px
+}
+
+#searchBar{
+    width: auto;
+    margin-left: 10px;
+    margin-right: 15px;
+    --border-radius: 20px;
+}
+
+/* ------Add Popover------ */
+
+.addPopover{
+    --offset-y: -9%;
+    --offset-x: 3%;
+}
+
+.addPopover ion-toolbar{
+    height:46px;
+    margin-top:-10px;
+}
+
+.addPopover h4{
+    text-align: center;
+    font-size: 15px;
+    margin: 0px;
+    text-indent: 25px;
+}
+
+.closeAddIcon{
+    font-size: 20px;
+    margin: 5px;
+}
+
+.addPopovergrid{
+    padding: 5px;
+}
+
+.addRow{
+    display: flex;
+    justify-content: center;
+}
+
+.addRow ion-col {
+    margin-left: 20px;
+    margin: 4px;
+    width: 72px;
+}
+
+.addRow ion-col ion-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addRow p{
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    font-size: 13px;
+}
+
+.addRow span{
+    margin: 3px;
+    font-size: 26px;
+}
+
+/* ------Filtro Popover------ */
+
+#filterIcon{
+    font-size: 20px;
+    margin-right: 20px;
+    padding: 10px;
+}
+
+.filterPopover {
+    --width: 90%;
+}
+
+.closeFilterIcon{
+    font-size: 30px;
+    margin: 5px;
+}
+
+.ordenar{
+    width: 100%;
+    padding: 0px;
+}
+
+.ordenarSelect{
+    width: 100%;
+    padding: 5px;
+}
+
+/* -------------------------- */
+/* ----------Content--------- */
+/* -------------------------- */
+
+#middleContent{
+    overflow-y: scroll;
+}
+
+.contentGrid{
+    padding: 25px;
+}
+
+/* ------Recordatorios------ */
+
+.recRow{
+    margin-bottom: 20px;
+    border-radius: 18px;
+}
+
+.recRow p{
+    margin: 0px;
+    margin-left: 5px;
+}
+
+.recInfo{
+    padding: 10px;
+}
+
+.recAsunto{
+    margin-bottom: 5px;
+}
+
+.recAsunto p{
+    font-size: 16px;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-right: 10px;
+}
+
+.recColor{
+    border-top-left-radius: 18px;
+    border-bottom-left-radius: 18px;
+    width: 52px;
+    max-width: 55px;
+}
+
+.recAtributo{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: 3px;
+}
+
+.recAtributo span{
+    font-size: 19px;
+    margin-left: 7px;
+}
+
+.recAtributo p{
+    font-size: 15px;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-right: 10px;
+}
+
+/* ----------Ideas---------- */
+
+.ideaRow{
+    margin-bottom: 20px;
+    border-radius: 18px;
+}
+
+.ideaRow p{
+    margin: 0px;
+    margin-left: 5px;
+}
+
+.ideaInfo{
+    padding: 10px;
+}
+
+.ideaColor{
+    border-top-left-radius: 18px;
+    border-bottom-left-radius: 18px;
+    width: 52px;
+    max-width: 55px;
+}
+
+.ideaTitulo{
+    margin-bottom: 5px;
+}
+
+.ideaTitulo p{
+    font-size: 16px;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-right: 10px;
+}
+
+.ideaDescripcion{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: 3px;
+}
+
+.ideaDescripcion p{
+    font-size: 14px;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-right: 10px;
+}
+
+/* ------Ayuda Memorias----- */
+
+.amRow{
+    margin-bottom: 20px;
+    border-radius: 18px;
+}
+
+.amRow p{
+    margin: 0px;
+    margin-left: 5px;
+}
+
+.amInfo{
+    padding: 10px;
+}
+
+.amTitulo{
+    margin-bottom: 5px;
+}
+
+.amTitulo p{
+    font-size: 16px;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-right: 10px;
+}
+
+.amColor{
+    border-top-left-radius: 18px;
+    border-bottom-left-radius: 18px;
+    width: 52px;
+    max-width: 55px;
+}
+
+.amAtributo{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: 3px;
+}
+
+.amAtributo span{
+    font-size: 19px;
+    margin-left: 7px;
+}
+
+.amAtributo p{
+    font-size: 15px;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-right: 10px;
+}
+
+/* ----------Notas---------- */
+
+.notaRow{
+    margin-bottom: 20px;
+    border-radius: 18px;
+}
+
+.notaColor{
+    border-top-left-radius: 18px;
+    border-bottom-left-radius: 18px;
+    width: 52px;
+    max-width: 55px;
+}
+
+.notaTitulo p{
+    margin: 0px;
+    margin-left: 5px;
+    padding: 8px;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-right: 10px;
+}
+
+/* -------------------------- */
+/* ----------Footer---------- */
+/* -------------------------- */
+
+.arrowUp{
+    display: flex;
+    justify-content: center;
+}
+
+.arrowUp ion-row{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+
+#addButton ion-icon{
+    font-size: 20px;
+}
+
+#addButton ion-fab-button{
+    border-radius: 50%;
+}
+
+.botmenu{
+    height: 120px;
+}
+
+#bottomMenu{
+    padding-left: 12px;
+    padding-bottom: 15px;
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    justify-content: left;
+}
+
+#bottomMenu li{
+    margin: 4px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+#bottomMenu li span{
+    margin: 0px;
+    font-size: 30px;
+}
+
+/*-------------- Modal ---------------*/
+
+#modal .titleRow{
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+
+#modal h2{
+    margin: 25px 5px 10px 5px;
+}
+
+#modal div {
+    text-align: center;
+    padding: 10px;
+    min-height: 100px;
+    border-radius: 5px;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+#modal div p{
+    margin: 0px;
+}
+
+#modal div span{
+    font-size: 30px;
+}

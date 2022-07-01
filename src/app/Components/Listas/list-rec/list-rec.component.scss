@@ -1,0 +1,78 @@
+.listPointIcon{
+    display:flex;
+    align-items:center;
+    justify-content:right;
+}
+
+.listPointIcon span{
+    font-size: 28px;
+    font-weight: bolder;
+    margin: 10px;
+}
+
+.contentGrid{
+    padding: 25px;
+}
+
+.recRow{
+    margin-bottom: 20px;
+    border-radius: 18px;
+}
+
+.recRow p{
+    margin: 0px;
+    margin-left: 5px;
+}
+
+.recInfo{
+    padding: 10px;
+}
+
+.recAsunto{
+    margin-bottom: 5px;
+}
+
+.recAsunto p{
+    font-size: 16px;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-right: 10px;
+}
+
+.recColor{
+    border-top-left-radius: 18px;
+    border-bottom-left-radius: 18px;
+    width: 52px;
+    max-width: 55px;
+}
+
+.recAtributo{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: 3px;
+}
+
+.recAtributo span{
+    font-size: 19px;
+    margin-left: 7px;
+}
+
+.recAtributo p{
+    font-size: 15px;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-right: 10px;
+}
+
+.addButton ion-icon{
+    font-size: 20px;
+}
+
+.addButton ion-fab-button{
+    border-radius: 50%;
+}
